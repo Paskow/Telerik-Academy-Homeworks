@@ -1,2 +1,2 @@
-# Telerik-Academy-JavaScript-UI-and-DOM-Homeworks
+# Telerik-Academy-Homeworks
 JavaScript UI and DOM homeworks
