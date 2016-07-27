@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentaseGame", "SentaseGame\SentaseGame.csproj", "{FE423A02-AD92-4C41-869E-E7F8374B9DBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDeckClass", "TestDeckClass\TestDeckClass.csproj", "{0FCE886E-CC81-4809-9397-0A6507538852}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE423A02-AD92-4C41-869E-E7F8374B9DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE423A02-AD92-4C41-869E-E7F8374B9DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE423A02-AD92-4C41-869E-E7F8374B9DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE423A02-AD92-4C41-869E-E7F8374B9DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCE886E-CC81-4809-9397-0A6507538852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCE886E-CC81-4809-9397-0A6507538852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCE886E-CC81-4809-9397-0A6507538852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCE886E-CC81-4809-9397-0A6507538852}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
