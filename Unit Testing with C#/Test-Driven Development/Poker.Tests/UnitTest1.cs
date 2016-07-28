@@ -16,6 +16,7 @@ namespace Poker.Tests
         }
 
         [TestMethod]
+               
         public void HandToString_ShouldReturnCardRepresentAssStringCorrectly()
         {
             var handCards = new List<ICard>()
