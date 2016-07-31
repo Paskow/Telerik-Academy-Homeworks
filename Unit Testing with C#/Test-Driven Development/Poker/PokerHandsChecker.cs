@@ -170,6 +170,12 @@ namespace Poker
 
         public int CompareHands(IHand firstHand, IHand secondHand)
         {
+            if (firstHand.Type != secondHand.Type)
+            {
+                return (int)firstHand.Type > (int)secondHand.Type ? -1 : 1;
+            }
+
+            // TODO : Implement Logic for Hands with same type but different kicker
             throw new NotImplementedException();
         }
 

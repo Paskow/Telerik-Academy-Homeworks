@@ -8,6 +8,8 @@ namespace Poker
     {
         public IList<ICard> Cards { get; private set; }
 
+        public HandType Type { get; set; }
+
         public Hand(IList<ICard> cards)
         {
             this.Cards = cards;

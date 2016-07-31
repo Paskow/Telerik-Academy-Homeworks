@@ -15,8 +15,7 @@ namespace Poker.Tests
             Assert.AreEqual("Nine of Clubs", card.ToString());
         }
 
-        [TestMethod]
-               
+        [TestMethod]           
         public void HandToString_ShouldReturnCardRepresentAssStringCorrectly()
         {
             var handCards = new List<ICard>()
@@ -389,6 +388,90 @@ King of Hearts";
             var hand = new Hand(handCards);
 
             Assert.IsFalse(new PokerHandsChecker().IsHighCard(hand));
+        }
+
+        [TestMethod]
+        public void CompareHands_UsingDifferentTypeHands_ShouldReturnMinusOne()
+        {
+            var firstHandCards = new List<ICard>()
+            {
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Spades),
+                new Card(CardFace.Four, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.Six, CardSuit.Hearts)
+            };
+            var secondHandCards = new List<ICard>()
+            {
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Spades),
+                new Card(CardFace.Three, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.Five, CardSuit.Hearts)
+            };
+            var firstHand = new Hand(firstHandCards);
+            var secondHand = new Hand(secondHandCards);
+
+            firstHand.Type = HandType.Straight;
+            secondHand.Type = HandType.FullHouse;
+
+            Assert.AreEqual(-1, new PokerHandsChecker().CompareHands(secondHand, firstHand));
+        }
+
+        [TestMethod]
+        public void CompareHands_UsingDifferentTypeHands_ShouldReturnOne()
+        {
+            var firstHandCards = new List<ICard>()
+            {
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Spades),
+                new Card(CardFace.Four, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.Six, CardSuit.Hearts)
+            };
+            var secondHandCards = new List<ICard>()
+            {
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Spades),
+                new Card(CardFace.Three, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.Five, CardSuit.Hearts)
+            };
+            var firstHand = new Hand(firstHandCards);
+            var secondHand = new Hand(secondHandCards);
+
+            firstHand.Type = HandType.Straight;
+            secondHand.Type = HandType.FullHouse;
+
+            Assert.AreEqual(1, new PokerHandsChecker().CompareHands(firstHand, secondHand));
+        }
+
+        [TestMethod]
+        public void CompareHands_UsingSameTypeAndSamePowerHands_ShouldReturnZero()
+        {
+            var firstHandCards = new List<ICard>()
+            {
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Spades),
+                new Card(CardFace.Four, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.Six, CardSuit.Hearts)
+            };
+            var secondHandCards = new List<ICard>()
+            {
+                new Card(CardFace.Three, CardSuit.Diamonds),
+                new Card(CardFace.Two, CardSuit.Spades),
+                new Card(CardFace.Four, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Spades),
+                new Card(CardFace.Five, CardSuit.Hearts)
+            };
+            var firstHand = new Hand(firstHandCards);
+            var secondHand = new Hand(secondHandCards);
+
+            firstHand.Type = HandType.Straight;
+            secondHand.Type = HandType.Straight;
+
+            Assert.AreEqual(0, new PokerHandsChecker().CompareHands(firstHand, secondHand));
         }
     }
 }

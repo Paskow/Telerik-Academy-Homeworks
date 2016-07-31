@@ -6,6 +6,7 @@ namespace Poker
     public interface IHand
     {
         IList<ICard> Cards { get; }
+        HandType Type { get; }
         string ToString();
     }
 }
