@@ -280,7 +280,8 @@ function solve() {
             if (isNaN(count) || count < 1) {
                 throw new Error();
             }
-            var sortedMedias = this._items.slice(0).sort((a, b) => b.rating - a.rating);
+
+            var sortedMedias = this._items.slice().sort((a, b) => b.rating - a.rating);
             var topMedias = [];
             for (let i = 0; i < count; i += 1) {
                 if (sortedMedias.length - 1 < i) {
@@ -304,6 +305,7 @@ function solve() {
             });
         }
     }
+
     return {
         getBook: function(name, isbn, genre, description) {
             return new Book(name, isbn, genre, description);
