@@ -25,7 +25,7 @@ namespace RefactoredIfStatements
             bool shouldNotVisitCell = true;
 
             if ((MinX <= x && x <= MaxX) && 
-                (MinY <= y && y >= MaxY) && 
+                (MinY <= y && y <= MaxY) && 
                 !shouldNotVisitCell)
             {
                 VisitCell();
