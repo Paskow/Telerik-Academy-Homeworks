@@ -154,24 +154,25 @@ class LinkedList {
             let arr = this.toArray();
             return arr.join(' -> ');
         }
-        [Symbol.iterator]() {
-            let currentNode = this._head;
+      
+    [Symbol.iterator]() {
+        let currentNode = this._head;
 
-            return {
-                next: function() {
-                    if (currentNode === null) {
-                        return { done: true };
-                    } else {
-                        let data = currentNode.data;
-                        currentNode = currentNode.nextNode;
-                        return {
-                            value: data,
-                            done: false
-                        }
+        return {
+            next: function() {
+                if (currentNode === null) {
+                    return { done: true };
+                } else {
+                    let data = currentNode.data;
+                    currentNode = currentNode.nextNode;
+                    return {
+                        value: data,
+                        done: false
                     }
                 }
             }
         }
+    }
 
     _getNodeAtIndex(index) {
         if (index <= 0) {
