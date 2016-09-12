@@ -254,6 +254,10 @@ function solve() {
 
             return uniqueGenres;
         }
+		
+		find(parameter){
+			super.find(parameter)
+		}
     }
 
     class MediaCatalog extends Catalog {
@@ -304,6 +308,10 @@ function solve() {
 
             });
         }
+		
+		find(parameter){
+			super.find(parameter);
+		}
     }
 
     return {
